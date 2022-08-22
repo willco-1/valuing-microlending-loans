@@ -19,21 +19,21 @@ loan_costs = [500, 600, 200, 1000, 450]
 # Print the number of loans from the list
 # YOUR CODE HERE!
 num_loans = len(loan_costs)
-print(num_loans)
+print(f"the number of loans in the list is ", {num_loans})
 
 # What is the total of all loans?
 # @TODO: Use the `sum` function to calculate the total of all loans in the list.
 # Print the total value of the loans
 # YOUR CODE HERE!
 total_of_loans = sum(loan_costs)
-print(total_of_loans)
+print(f"The cumalative total of loans is ", {total_of_loans})
 
 # What is the average loan amount from the list?
 # @TODO: Using the sum of all loans and the total number of loans, calculate the average loan price.
 # Print the average loan amount
 # YOUR CODE HERE!
 avg_loan_price = total_of_loans / num_loans 
-print(avg_loan_price)
+print(f"the average loan price is" , {avg_loan_price})
 
 """Part 2: Analyze Loan Data.
 
@@ -79,7 +79,7 @@ loan.get("future_value", "remaining_months")
 
 # YOUR CODE HERE!
 present_value = loan["future_value"]/ (1 + .20/12) ** loan["remaining_months"]
-print(f" ", {present_value})
+print(f" the present value of the loan is ", {present_value})
 
 # If Present Value represents what the loan is really worth, does it make sense to buy the loan at its cost?
 # @TODO: Write a conditional statement (an if-else statement) to decide if the present value represents the loan's fair value.
@@ -124,7 +124,7 @@ def calculating_PV(future_value, remaining_months, annual_discount_rate):
 # YOUR CODE HERE!
 
 calculating_PV(new_loan["future_value"], new_loan["remaining_months"], annual_discount_rate=.20)
-print(f"The present value of the loan is: {present_value}")
+print(f"The present value of the loan is:", {present_value})
 
 
 """Part 4: Conditionally filter lists of loans.
@@ -176,7 +176,7 @@ for loan in loans:
          inexpensive_loans.append(loan)
 # @TODO: Print the `inexpensive_loans` list
 # YOUR CODE HERE!
-print(inexpensive_loans)
+print(f"list of inexpensive loans:" , inexpensive_loans)
 
 """Part 5: Save the results.
 
@@ -201,11 +201,14 @@ output_path = Path("inexpensive_loans.csv")
 # @TODO: Use the csv library and `csv.writer` to write the header row
 # and each row of `loan.values()` from the `inexpensive_loans` list.
 # YOUR CODE HERE!
-with open("inexpesnive.csv",'w' , newline='',) as f:
+
+with open("inexpensive.csv",'w' , newline='',) as f:
      writer = csv.writer(f)
      writer.writerow(header)
      for loan in inexpensive_loans: 
-        writer.writerows(inexpensive_loans
+        writer.writerows(inexpensive_loans[0], inexpensive_loans[1], inexpensive_loans[2])
+        
+        
     
      
      
